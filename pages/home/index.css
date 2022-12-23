@@ -1,1 +1,240 @@
-/* Desenvolva sua estilização aqui... */
+header {
+    background-image: url(../../assets/img/backgroundmobile.svg);
+    background-size: cover;
+    width: 100vw;
+    height: 789px;
+    color: var(--color-grey-3);
+    background-color: var(--opacity-1);
+}
+
+.container__header {
+    background-color: var(--opacity-1);
+    height: 100%;
+}
+
+.logo {
+    height: 23.97px;
+    width: 193.31px;
+    margin: 100px 165.69px 0 16px;
+}
+
+.container__header--titulo {
+    margin: 60px 16px 0 16px;
+    font-weight: 600;
+    line-height: 48px;
+    font-size: var(--title-3);
+}
+
+.container__header--text {
+    margin: 32px 16px;
+    line-height: 27px;
+    font-size: var(--text-2);
+    font-weight: 400;
+}
+
+.container__header--btn {
+    border: 2px solid var(--color-brand-1);
+    border-radius: var(--radius-default);
+    background: var(--color-brand-1);
+    padding: 12px 50px;
+    gap: 10px;
+    width: 296px;
+    height: 48px;
+    font-weight: 500;
+    font-size: var(--text-2);
+    color: var(--color-grey-6);
+    margin: 60px 63px 100px 16px;
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: var(--title-4);
+    color: var(--color-grey-1);
+    margin: 43px 0 0 16px;
+}
+
+#jobs {
+    display: flex;
+    flex-direction: column;
+    padding: 38px;
+    gap: 32px;
+}
+
+.container__vagas {
+    width: 344px;
+    background-color: var(--color-grey-6);
+    padding: 38px;
+    border-radius: 8px;
+}
+
+.container__vagas--titulo {
+    font-weight: 600;
+    font-size: var(--title-4);
+    line-height: 27px;
+    margin-bottom: 18px;
+    color: var(--color-grey-1);
+}
+
+.container__vagas--area {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+.container__vagas--local {
+    font-weight: 400;
+    font-size: var(--text-3);
+    line-height: 22px;
+    color: var(--color-grey-2);
+
+}
+
+.container__vagas--texto {
+    font-weight: 400;
+    font-size: var(--text-2);
+    color: var(--color-grey-2);
+    margin-bottom: 28px;
+}
+
+.container__vagas--tipo {
+    font-weight: 400;
+    font-size: var(--text-3);
+    color: var(--color-grey-2);
+    margin-right: 30px;
+    background-color: var(--color-grey-3);
+    padding: 4px 12px;
+    border-radius: 8px;
+    height: 30px;
+    max-height: 30px;
+}
+
+.container__vagas--btn {
+    width: 268px;
+    height: 38px;
+    border: 2px solid var(--color-brand-1);
+    border-radius: 8px;
+    background-color: var(--color-brand-1);
+    font-weight: 500;
+    font-size: var(--text-2);
+    color: var(--color-grey-6);
+    font-family: 'Poppins';
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+.selectedJobsArea {
+    min-height: 367px;
+    height: fit-content;
+    max-width: 344px;
+    background-color: var(--color-grey-6);
+    border-radius: 8px;
+    margin: 46px 30px 0px 30px;
+    padding: 32px;
+}
+
+.selectedJobsTitle{
+    font-weight: 600;
+    font-size: var(--title-4);
+    color: var(--color-grey-1);
+}
+
+#selectedJobs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 32px;
+}
+
+.jobs {
+    position: relative;
+    width: 300px;
+    background-color: var(--color-grey-6);
+    border-radius: 8px;
+}
+
+.container__vagas--button {
+    position: absolute;
+    right: -2.25px;
+    top: 8.75px;
+    border-radius: 8px;
+    background-color: var(--color-grey-5);
+    padding: 12px 15.5px;
+    border: none;
+    cursor: pointer;
+}
+
+.container__vagaSelecionada--titulo{
+    width: 230px;
+    font-weight: 600;
+    font-size: var(--text-1);
+    line-height: 27px;
+    margin-bottom: 18px;
+    color: var(--color-grey-1);
+}
+
+@media(min-width: 769px){
+    header {
+        background-image: url(../../assets/img/background.svg);
+        background-size: auto;
+        width: 100vw;
+        height: 735px;
+        color: var(--color-grey-3);
+        background-color: var(--opacity-1);
+    }
+
+    .logo{
+        margin: 60px 0px 0 100px;
+    }
+
+    .container__header--titulo {
+        margin: 60px 0px 0 100px;
+        font-size: var(--title-1);
+    }
+
+    .container__header--text {
+        margin: 32px 0px 32px 100px;
+        line-height: 36px;
+        font-size: var(--text-1);
+    }
+
+    .container__header--btn {
+        margin: 60px 0px 100px 100px;
+    }
+
+    main{
+        display: flex;
+    }
+
+    h2 {
+        margin: 45px 0 0 100px;
+    }
+
+    .container__vagas {
+        width: 818px;
+        margin-left: 45px;
+    }
+
+    .container__vagas--titulo {
+        line-height: 33px;
+    }
+
+    .container__vagas--btn {
+        width: 150px;
+        height: 38px;
+        margin-top: 28px;
+    }
+
+    .selectedJobsTitle{
+        font-weight: 600;
+        font-size: var(--title-4);
+        color: var(--color-grey-1);
+        margin: 0;
+    }
+
+    .selectedJobsArea {
+        margin-top: 116px;
+        width: 350px;
+    }
+}
