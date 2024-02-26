@@ -2,11 +2,11 @@ function state(initialValue) {
   let value = initialValue;
 
   function getValue() {
-    return value
+    return value;
   }
 
   function setValue(newValue) {
-    value = newValue
+    value = newValue;
   }
 
   return [getValue, setValue];
@@ -19,7 +19,7 @@ const [database, setDatabase] = state([
     enterprise: "Kenzie",
     location: "Curitiba",
     descrition:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     modalities: ["Hibrido", "Presencial"],
   },
   {
@@ -44,19 +44,19 @@ const [database, setDatabase] = state([
 
 const [cart, setCart] = state([]);
 
-function cartAnalysis (){
-  const cartLocalJSON = localStorage.getItem("cart")
+function cartAnalysis() {
+  const cartLocalJSON = localStorage.getItem("cart");
 
-  if(cartLocalJSON){
-    const cartLocal = JSON.parse(cartLocalJSON)
-    
-    return setCart(cartLocal)
+  if (cartLocalJSON) {
+    const cartLocal = JSON.parse(cartLocalJSON);
+
+    return setCart(cartLocal);
   }
 }
 
 function showJobs(jobs = database()) {
-  const container = document.querySelector("#jobs")
-  
+  const container = document.querySelector("#jobs");
+
   jobs.forEach((job) => {
     container.insertAdjacentHTML(
       "beforeend",
@@ -71,32 +71,32 @@ function showJobs(jobs = database()) {
       <button onClick={addToCart(${job.id})} id={${job.id}} class="container__vagas--btn">Candidatar</button>
       </li>
       `
-      )
-    });
-    return container
+    );
+  });
+  return container;
 }
-  
-  function addToCart(id, jobs = database()) {
-    const selectedJob = jobs.find((element) => element.id === id);
-    
-    setCart([...cart(), selectedJob])
-    
-    const productsJson = JSON.stringify(cart())
-    
-    localStorage.setItem("cart", productsJson)
-    
-    return showJobsInCart()
+
+function addToCart(id, jobs = database()) {
+  const selectedJob = jobs.find((element) => element.id === id);
+
+  setCart([...cart(), selectedJob]);
+
+  const productsJson = JSON.stringify(cart());
+
+  localStorage.setItem("cart", productsJson);
+
+  return showJobsInCart();
 }
-  
-  function showJobsInCart(jobs = cart()) {
-    const container = document.querySelector("#selectedJobs")
-    
-    container.innerHTML = "";
-    
-    jobs.forEach((job) => {
-      container.insertAdjacentHTML(
-        "beforeend",
-        `
+
+function showJobsInCart(jobs = cart()) {
+  const container = document.querySelector("#selectedJobs");
+
+  container.innerHTML = "";
+
+  jobs.forEach((job) => {
+    container.insertAdjacentHTML(
+      "beforeend",
+      `
         <li class="jobs">
         <h3 class="container__vagaSelecionada--titulo">${job.title}</h3> <button onClick={removeFromCart(${job.id})} id={${job.id}} class="fa-solid fa-trash container__vagas--button"></button>
         <div class="container__vagas--area">
@@ -104,27 +104,27 @@ function showJobs(jobs = database()) {
         </div>
         </li>
         `
-        )
-      });
-      return container;
+    );
+  });
+  return container;
 }
-    
-  function removeFromCart(id, jobs = cart()) {
-      const findJob = jobs.findIndex((element)=> element.id === id)
-      
-      const newCartJobs = [...jobs]
-      
-  newCartJobs.splice(findJob, 1)
-  
-  setCart(newCartJobs)
-  
-  const productsJOSN = JSON.stringify(cart())
-  
-  localStorage.setItem("cart", productsJOSN)
-  
+
+function removeFromCart(id, jobs = cart()) {
+  const findJob = jobs.findIndex((element) => element.id === id);
+
+  const newCartJobs = [...jobs];
+
+  newCartJobs.splice(findJob, 1);
+
+  setCart(newCartJobs);
+
+  const productsJOSN = JSON.stringify(cart());
+
+  localStorage.setItem("cart", productsJOSN);
+
   return showJobsInCart();
 }
 
-cartAnalysis()
-showJobs()
-showJobsInCart()
+cartAnalysis();
+showJobs();
+showJobsInCart();
